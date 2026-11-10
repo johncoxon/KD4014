@@ -122,7 +122,7 @@ elif grade >= 90:
 ~~~
 {: .python}
 ~~~
-grade is C
+grade is B
 ~~~
 {: .output}
 
