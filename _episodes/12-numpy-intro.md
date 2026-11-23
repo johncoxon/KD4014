@@ -301,8 +301,8 @@ We can use `enumerate` to index the velocity array as we iterate through the `fo
 ~~~
 from scipy.constants import g
 
-v_0 = 0.0 						  # Initial velocity in metres per second
-velocity_array = numpy.zeros(50)  # Empty array to hold calculated values
+v_0 = 0.0    # Initial velocity in metres per second
+velocity_array = numpy.zeros(50)    # Empty array to hold calculated values
 
 for index, time in enumerate(times): 
        velocity_array[index] = v_0 + g * time
