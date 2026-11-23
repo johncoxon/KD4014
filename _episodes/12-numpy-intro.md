@@ -245,11 +245,11 @@ header
 {: .language-python}
 
 ~~~
-'% Wavelength (nm),Transmittance ITO (%),Transmittance CdS (%),Transmittance Si (%),Transmittance GaAs (%)\n'
+'# Wavelength (nm),Transmittance ITO (%),Transmittance CdS (%),Transmittance Si (%),Transmittance GaAs (%)\n'
 ~~~
 {: .output}
 
-Note that Numpy has inserted a `%` at the start of the header line to indicate that it is a comment and should be ignored. Numpy has also written the file without commas separating each data value. As a result, we can read in this cleaned data file with a single numpy argument:
+Note that Numpy has inserted a `#` at the start of the header line to indicate that it is a comment and should be ignored. Numpy has also written the file without commas separating each data value. As a result, we can read in this cleaned data file with a single numpy argument:
 
 ~~~
 numpy.loadtxt("./data/transmittance.csv")
@@ -299,10 +299,13 @@ value is: 30
 We can use `enumerate` to index the velocity array as we iterate through the `for` loop.
 
 ~~~
-velocity_array = numpy.zeros(50) # empty array to hold calculated values
+from scipy.constants import g
 
-for index,time in enumerate(times): 
-       velocity_array[index] = v_0 + g*time
+v_0 = 0.0 						  # Initial velocity in metres per second
+velocity_array = numpy.zeros(50)  # Empty array to hold calculated values
+
+for index, time in enumerate(times): 
+       velocity_array[index] = v_0 + g * time
 ~~~
 {: .language-python}
 
